@@ -1,0 +1,93 @@
+{
+  "address": "TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM",
+  "metadata": {
+    "name": "q3_pre_reqs_rs",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "idlVersion": "2.1.0",
+  "discriminator": {
+    "length": 8
+  },
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true,
+          "desc": "Your public key, the signer and payer."
+        },
+        {
+          "name": "account",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "PDA account to be created by the program."
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "The Solana System Program."
+        }
+      ],
+      "args": [
+        {
+          "name": "github",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitTs",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true,
+          "desc": "Your public key, the signer and payer."
+        },
+        {
+          "name": "account",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "The account previously initialized by the program."
+        },
+        {
+          "name": "mint",
+          "isMut": true,
+          "isSigner": true,
+          "desc": "The address of the new asset (NFT/Token)."
+        },
+        {
+          "name": "collection",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "The collection to which the asset belongs."
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true,
+          "desc": "The authority signing for the NFT creation (likely a PDA/Keypair)."
+        },
+        {
+          "name": "mplCoreProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "The Metaplex Core program for asset creation."
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "The Solana System Program."
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [],
+  "errors": []
+}
